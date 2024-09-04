@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://iaettwvupkte"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_gsfpn"]
+[ext_resource type="Texture2D" uid="uid://cufi8qpbk7l06" path="res://icon.svg" id="2_m4oth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq82"]
+size = Vector2(117, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur8kq"]
+size = Vector2(127, 129)
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.52, 0.56)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_gsfpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m4oth")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_7nq82")
+
+[node name="enemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ur8kq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 77.0
+offset_top = -62.0
+offset_right = 117.0
+offset_bottom = -39.0
+
+[connection signal="area_entered" from="enemyHitbox" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="enemyHitbox" to="." method="_on_area_2d_body_entered"]
