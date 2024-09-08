@@ -19,4 +19,4 @@ func enemySpawn():
 	#print(enemyIns.dir)
 	enemyIns.global_position = $Spawner.global_position
 	get_parent().add_child(enemyIns)
-	enemyIns.find_player()
+	enemyIns.findPlayer()

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c24frtm2gpjt8"]
+
+[ext_resource type="Script" path="res://explosion_particles.gd" id="1_ox47r"]
+
+[sub_resource type="Gradient" id="Gradient_cc68c"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.00666667, 0.98, 0.986667, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.92, 0.92, 0.92, 1, 0.102222, 0.102222, 0.102222, 1, 0.117647, 0.117647, 0.117647, 1, 1, 1, 1, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = -1
+emitting = false
+amount = 50
+lifetime = 0.3
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.44
+emission_shape = 1
+emission_sphere_radius = 78.57
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+angular_velocity_min = 100.0
+angular_velocity_max = 150.0
+scale_amount_max = 5.0
+color = Color(1, 0.356863, 0, 1)
+color_ramp = SubResource("Gradient_cc68c")
+hue_variation_min = 0.22
+hue_variation_max = 1.0
+script = ExtResource("1_ox47r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

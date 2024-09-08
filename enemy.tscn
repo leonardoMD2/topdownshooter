@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://iaettwvupkte"]
+[gd_scene load_steps=6 format=3 uid="uid://iaettwvupkte"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_gsfpn"]
 [ext_resource type="Texture2D" uid="uid://cufi8qpbk7l06" path="res://icon.svg" id="2_m4oth"]
+[ext_resource type="PackedScene" uid="uid://c24frtm2gpjt8" path="res://explosionParticles.tscn" id="2_omro0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq82"]
 size = Vector2(117, 109)
@@ -10,10 +11,12 @@ size = Vector2(117, 109)
 size = Vector2(127, 129)
 
 [node name="Enemy" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(0.52, 0.56)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_gsfpn")
+explosion = ExtResource("2_omro0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_m4oth")
