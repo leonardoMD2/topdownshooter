@@ -25,6 +25,6 @@ func shoot():
 	bulletIns.global_position = $Marker2D.global_position
 	bulletIns.dir = get_global_mouse_position() - $Marker2D.global_position
 	get_parent().add_child(bulletIns)
-
+	$AudioStreamPlayer2D.play()
 
 	

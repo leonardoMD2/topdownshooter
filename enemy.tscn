@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://iaettwvupkte"]
+[gd_scene load_steps=7 format=3 uid="uid://iaettwvupkte"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_gsfpn"]
 [ext_resource type="Texture2D" uid="uid://cufi8qpbk7l06" path="res://icon.svg" id="2_m4oth"]
 [ext_resource type="PackedScene" uid="uid://c24frtm2gpjt8" path="res://explosionParticles.tscn" id="2_omro0"]
+[ext_resource type="AudioStream" uid="uid://ddieiikmqxw7v" path="res://src/Shoot sound/hit01.wav" id="4_8coft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq82"]
 size = Vector2(117, 109)
@@ -36,6 +37,10 @@ offset_left = 77.0
 offset_top = -62.0
 offset_right = 117.0
 offset_bottom = -39.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8coft")
+volume_db = -5.0
 
 [connection signal="area_entered" from="enemyHitbox" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="enemyHitbox" to="." method="_on_area_2d_body_entered"]
