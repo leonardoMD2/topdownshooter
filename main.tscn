@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://ccf72hbemwjm4"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://ccf72hbemwjm4"]
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 
 [ext_resource type="PackedScene" uid="uid://c0ttqk0qajpgj" path="res://Character.tscn" id="1_1dc2i"]
 [ext_resource type="Script" path="res://main.gd" id="1_aw3d1"]
 [ext_resource type="PackedScene" uid="uid://iaettwvupkte" path="res://enemy.tscn" id="3_274em"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://c44aferb3cpbg" path="res://boss.tscn" id="3_tcsro"]
 [ext_resource type="PackedScene" uid="uid://b0bc1gn78qtk7" path="res://RainParticles.tscn" id="4_sxads"]
 
@@ -13,6 +18,13 @@ size = Vector2(1181, 20)
 script = ExtResource("1_aw3d1")
 enemyScene = ExtResource("3_274em")
 bossScene = ExtResource("3_tcsro")
+=======
+[ext_resource type="PackedScene" uid="uid://b0bc1gn78qtk7" path="res://RainParticles.tscn" id="4_sxads"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_aw3d1")
+enemyScene = ExtResource("3_274em")
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -22,7 +34,10 @@ color = Color(0.384314, 0, 0.705882, 1)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_1dc2i")]
 unique_name_in_owner = true
+<<<<<<< HEAD
 position = Vector2(94, 81)
+=======
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -31,6 +46,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Next spawn in:  "
 
+<<<<<<< HEAD
 [node name="Label3" type="Label" parent="CanvasLayer"]
 offset_left = 965.0
 offset_top = 4.0
@@ -45,6 +61,8 @@ offset_right = 1131.0
 offset_bottom = 27.0
 text = "0"
 
+=======
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 [node name="Label2" type="Label" parent="CanvasLayer"]
 offset_left = 121.0
 offset_right = 244.0
@@ -52,6 +70,7 @@ offset_bottom = 23.0
 text = "Next spawn in:  "
 
 [node name="TimerSpawn" type="Timer" parent="."]
+<<<<<<< HEAD
 wait_time = 1.5
 
 [node name="TimerSpawnBoss" type="Timer" parent="."]
@@ -68,10 +87,17 @@ position = Vector2(1111, 27)
 
 [node name="Spawner4" type="Marker2D" parent="."]
 position = Vector2(79, 604)
+=======
+wait_time = 2.0
+
+[node name="Spawner" type="Marker2D" parent="."]
+position = Vector2(907, 265)
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("4_sxads")]
 position = Vector2(601, 281)
 
+<<<<<<< HEAD
 [node name="Limites" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limites"]
@@ -113,3 +139,6 @@ shape = SubResource("RectangleShape2D_pwlbp")
 
 [connection signal="timeout" from="TimerSpawn" to="." method="_on_timer_spawn_timeout"]
 [connection signal="timeout" from="TimerSpawnBoss" to="." method="_on_timer_spawn_boss_timeout"]
+=======
+[connection signal="timeout" from="TimerSpawn" to="." method="_on_timer_spawn_timeout"]
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8

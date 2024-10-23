@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
 @export var speed = 400
+<<<<<<< HEAD
 @export var characterLife:int = 10
+=======
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 @export var bullet:PackedScene
 var shootTime = true
 
@@ -12,15 +15,23 @@ func get_input():
 	
 
 	if Input.is_action_just_pressed("shoot") and shootTime:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 		shoot()
 		
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+<<<<<<< HEAD
 	$Label.text = str(characterLife)
 	if characterLife <= 0:
 		$Label.text = "Muerto"
 		
+=======
+	
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 func shoot():
 	
 	var bulletIns = bullet.instantiate()
@@ -31,9 +42,12 @@ func shoot():
 	$AudioStreamPlayer2D.play()
 
 	
+<<<<<<< HEAD
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body.name)
 	if body.is_in_group("enemy"):
 		characterLife -= 1
+=======
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8

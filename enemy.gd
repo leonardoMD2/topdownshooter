@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
 var character
+<<<<<<< HEAD
 var life = 3
 @export var speed = 200
+=======
+var life = 10
+@export var speed = 100
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 @export var explosion: PackedScene
 #@export var explosionDeath: PackedScene
 
@@ -81,5 +86,8 @@ func tweenDisapear():
 	tween.tween_callback(death)
 	
 func death():
+<<<<<<< HEAD
 	GlobalScript.points += 1
+=======
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 	queue_free()

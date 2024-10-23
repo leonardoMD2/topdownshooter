@@ -15,10 +15,13 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< HEAD
 [autoload]
 
 GlobalScript="*res://global_script.gd"
 
+=======
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 [input]
 
 shoot={

@@ -6,12 +6,21 @@
 [ext_resource type="AudioStream" uid="uid://ddieiikmqxw7v" path="res://src/Shoot sound/hit01.wav" id="4_8coft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq82"]
+<<<<<<< HEAD
 size = Vector2(120.538, 122.071)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ur8kq"]
 size = Vector2(142.308, 137.5)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+=======
+size = Vector2(117, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur8kq"]
+size = Vector2(127, 129)
+
+[node name="Enemy" type="CharacterBody2D"]
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 z_index = 1
 scale = Vector2(0.52, 0.56)
 collision_layer = 4
@@ -22,6 +31,7 @@ explosion = ExtResource("2_omro0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_m4oth")
 
+<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
 position = Vector2(-1.92308, -1.78571)
 scale = Vector2(1.08791, 1.07143)
@@ -31,6 +41,16 @@ shape = SubResource("RectangleShape2D_7nq82")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
 position = Vector2(-1.92308, -2.67858)
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_7nq82")
+
+[node name="enemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(-0.5, -0.5)
+>>>>>>> 1861ef25fab010747902994dd512815de06066e8
 shape = SubResource("RectangleShape2D_ur8kq")
 
 [node name="Label" type="Label" parent="."]
