@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1ohiqc2crvdn"
+path="res://.godot/imported/alienshoot1.ogg-5c6ec1b7b5d9e2e95ee3f86b027b6e0a.oggvorbisstr"
+
+[deps]
+
+source_file="res://src/Shoot sound/alienshoot1.ogg"
+dest_files=["res://.godot/imported/alienshoot1.ogg-5c6ec1b7b5d9e2e95ee3f86b027b6e0a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

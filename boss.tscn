@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c44aferb3cpbg"]
+
+[ext_resource type="Script" path="res://boss.gd" id="1_f018l"]
+[ext_resource type="PackedScene" uid="uid://c24frtm2gpjt8" path="res://explosionParticles.tscn" id="2_p5sh3"]
+[ext_resource type="Texture2D" uid="uid://cufi8qpbk7l06" path="res://icon.svg" id="3_hneqk"]
+[ext_resource type="AudioStream" uid="uid://ddieiikmqxw7v" path="res://src/Shoot sound/hit01.wav" id="4_50g3p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq82"]
+size = Vector2(117, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur8kq"]
+size = Vector2(127, 129)
+
+[node name="Boss" type="CharacterBody2D" groups=["enemy"]]
+z_index = 1
+scale = Vector2(1.83368, 1.37809)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_f018l")
+speed = 300
+explosion = ExtResource("2_p5sh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(1, 1.02903)
+texture = ExtResource("3_hneqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_7nq82")
+
+[node name="enemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ur8kq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 77.0
+offset_top = -62.0
+offset_right = 117.0
+offset_bottom = -39.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_50g3p")
+volume_db = -5.0
+
+[connection signal="area_entered" from="enemyHitbox" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="enemyHitbox" to="." method="_on_area_2d_body_entered"]

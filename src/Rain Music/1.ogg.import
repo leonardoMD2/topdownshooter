@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjsarmk0n8nay"
+path="res://.godot/imported/1.ogg-8ba1550bd35ae244eb04e18e6eb8f3e9.oggvorbisstr"
+
+[deps]
+
+source_file="res://src/Rain Music/1.ogg"
+dest_files=["res://.godot/imported/1.ogg-8ba1550bd35ae244eb04e18e6eb8f3e9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

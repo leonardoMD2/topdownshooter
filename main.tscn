@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccf72hbemwjm4"]
+
+[ext_resource type="PackedScene" uid="uid://c0ttqk0qajpgj" path="res://Character.tscn" id="1_1dc2i"]
+[ext_resource type="Script" path="res://main.gd" id="1_aw3d1"]
+[ext_resource type="PackedScene" uid="uid://iaettwvupkte" path="res://enemy.tscn" id="3_274em"]
+[ext_resource type="PackedScene" uid="uid://c44aferb3cpbg" path="res://boss.tscn" id="3_tcsro"]
+[ext_resource type="PackedScene" uid="uid://b0bc1gn78qtk7" path="res://RainParticles.tscn" id="4_sxads"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwlbp"]
+size = Vector2(1181, 20)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_aw3d1")
+enemyScene = ExtResource("3_274em")
+bossScene = ExtResource("3_tcsro")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 1158.0
+offset_bottom = 650.0
+color = Color(0.384314, 0, 0.705882, 1)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_1dc2i")]
+unique_name_in_owner = true
+position = Vector2(94, 81)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Next spawn in:  "
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 965.0
+offset_top = 4.0
+offset_right = 1088.0
+offset_bottom = 27.0
+text = "Kills:"
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 1008.0
+offset_top = 4.0
+offset_right = 1131.0
+offset_bottom = 27.0
+text = "0"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 121.0
+offset_right = 244.0
+offset_bottom = 23.0
+text = "Next spawn in:  "
+
+[node name="TimerSpawn" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="TimerSpawnBoss" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Spawner" type="Marker2D" parent="."]
+position = Vector2(1060, 586)
+
+[node name="Spawner2" type="Marker2D" parent="."]
+position = Vector2(112, 25)
+
+[node name="Spawner3" type="Marker2D" parent="."]
+position = Vector2(1111, 27)
+
+[node name="Spawner4" type="Marker2D" parent="."]
+position = Vector2(79, 604)
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("4_sxads")]
+position = Vector2(601, 281)
+
+[node name="Limites" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Limites"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/StaticBody2D"]
+position = Vector2(580.5, 0)
+shape = SubResource("RectangleShape2D_pwlbp")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Limites"]
+position = Vector2(5, 656)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/StaticBody2D3"]
+position = Vector2(580.5, 0)
+shape = SubResource("RectangleShape2D_pwlbp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Limites"]
+position = Vector2(-5, 913)
+rotation = -1.56785
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/StaticBody2D2"]
+position = Vector2(580.5, 0)
+shape = SubResource("RectangleShape2D_pwlbp")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Limites"]
+position = Vector2(1151, 899)
+rotation = -1.56785
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/StaticBody2D4"]
+position = Vector2(580.5, 0)
+shape = SubResource("RectangleShape2D_pwlbp")
+
+[connection signal="timeout" from="TimerSpawn" to="." method="_on_timer_spawn_timeout"]
+[connection signal="timeout" from="TimerSpawnBoss" to="." method="_on_timer_spawn_boss_timeout"]
